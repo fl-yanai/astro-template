@@ -1,0 +1,13 @@
+# config
+prettier.config.cjs
+astro.config.mjs
+tailwind.config.js
+tsconfig.json
+.eslintrc.cjs
+.vscode/
+package.json
+README.md
+yarn.lock
+
+# build dir
+dist/

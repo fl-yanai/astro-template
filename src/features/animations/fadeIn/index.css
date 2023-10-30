@@ -1,0 +1,8 @@
+.--target {
+  opacity: 0;
+  transition: 1s;
+}
+
+.--target.--targetPassed {
+  opacity: 1;
+}
