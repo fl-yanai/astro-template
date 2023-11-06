@@ -1,5 +1,7 @@
 ---
 import Layout from '@/components/layouts/Layout.astro'
+import Accordion from '@/components/ui/parts/Accordion.astro'
+import { ButtonDefault } from '@/components/ui/parts/Buttons/ButtonDefault.tsx'
 import '@/features/animations/fadeIn/index.css'
 ---
 
@@ -8,9 +10,19 @@ import '@/features/animations/fadeIn/index.css'
   fadeInAnimation()
 </script>
 
-<Layout title='test' lang='ja'>
+<Layout title='test'>
   <h1 class='clamp-text-[10,20] font-bold --target clamp-my-[20,50]'>Astro</h1>
   <h1 class='text'>Astro</h1>
+  <ButtonDefault label='About' color='green' outline={true} size='base' link='/about' client:load />
+  <Accordion
+    items={[
+      { title: 'one', body: 'これは本文です' },
+      { title: 'two', body: '二番目' },
+      { title: 'three', body: 'sann番目' },
+      { title: 'four', body: '4番目' },
+      { title: 'five', body: 'go番目' },
+    ]}
+  />
 </Layout>
 
 <style>

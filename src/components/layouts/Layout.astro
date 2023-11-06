@@ -1,5 +1,9 @@
 ---
-const { lang, title } = Astro.props
+interface Props {
+  lang: 'ja' | 'en'
+  title: string
+}
+const { lang = 'ja', title } = Astro.props
 ---
 
 <!doctype html>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  crumbs: { link: string; label: string }[]
+}
+const { crumbs } = Astro.props
+---
+
+<nav aria-label='breadcrumb'>
+  <ol class='inline-flex items-center space-x-4 py-2 text-sm font-medium'>
+    <li class='inline-flex items-center'>
+      <a href='/'>Home</a>
+    </li>
+    {
+      crumbs.map((crumb, index) => {
+        return (
+          <li class={`inline-flex items-center space-x-4`}>
+            <span>/</span>
+            {index + 1 === crumbs.length ? (
+              <p>{crumb.label}</p>
+            ) : (
+              <a href={crumb.link}>{crumb.label}</a>
+            )}
+          </li>
+        )
+      })
+    }
+  </ol>
+</nav>
