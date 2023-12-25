@@ -1,7 +1,7 @@
 ---
 interface Props {
-  lang: 'ja' | 'en'
   title: string
+  lang?: 'ja' | 'en'
 }
 const { lang = 'ja', title } = Astro.props
 ---

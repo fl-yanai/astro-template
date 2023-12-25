@@ -1,22 +1,7 @@
 ---
 import Layout from '@/components/layouts/Layout.astro'
-import Breadcrumb from '@/components/ui/parts/Breadcrumb.astro'
-import '@/features/animations/fadeIn/index.css'
 ---
 
-<script>
-  import { fadeInAnimation } from '@/features/animations/fadeIn/fadeInAnimation'
-  fadeInAnimation()
-</script>
-
 <Layout title='about'>
-  <h1 class='text-[30px] font-bold --target'>About</h1>
-  <h1 class='text'>About</h1>
-  <Breadcrumb crumbs={[{ label: 'about', link: 'about' }]} />
+  <p>about</p>
 </Layout>
-
-<style>
-  .text {
-    font-size: 2rem;
-  }
-</style>
