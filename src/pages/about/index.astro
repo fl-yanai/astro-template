@@ -1,7 +1,8 @@
 ---
-import Layout from '@/components/layouts/Layout.astro'
+import LayoutDefault from '@/components/layouts/LayoutDefault.astro'
+import { PAGE } from '@/utils/constant'
 ---
 
-<Layout title='about'>
+<LayoutDefault html={{ title: PAGE.about.title }}>
   <p>about</p>
-</Layout>
+</LayoutDefault>

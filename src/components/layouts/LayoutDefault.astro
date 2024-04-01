@@ -1,0 +1,19 @@
+---
+import type { typeHtml } from './type'
+import Html from '@/components/layouts/Html.astro'
+import Header from '@/components/ui/groups/Layouts/Header.astro'
+
+interface Props {
+  html: typeHtml
+}
+const { html } = Astro.props
+---
+
+<Html {...html}>
+  <link rel='stylesheet' href='/css/layouts/header.css' slot='meta' />
+  <script src='/js/layouts/header.js' slot='script'></script>
+  <Header width='c-wrapper-l' />
+  <main class='c-wrapper-l'>
+    <slot />
+  </main>
+</Html>

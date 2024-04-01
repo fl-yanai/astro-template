@@ -1,0 +1,39 @@
+.c-wrapper-xl {
+  max-width: 1600px;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-wrapper-l {
+  max-width: 1200px;
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-wrapper-m {
+  max-width: 1024px;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-wrapper-s {
+  max-width: 768px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-inner-l {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-inner-m {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-inner-s {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}

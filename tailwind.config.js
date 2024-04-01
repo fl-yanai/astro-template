@@ -8,7 +8,7 @@ const clamp = (minSize, maxSize, minWidth, maxWidth) => {
   return `clamp(${rem(minSize)}, ${v}vw${rem(r) === '0rem' ? '' : ` + ${rem(r)}`}, ${rem(maxSize)})`
 }
 
-const getClampSize = (minSize, maxSize, minWidth = 370, maxWidth = 750) => {
+const getClampSize = (minSize, maxSize, minWidth = 375, maxWidth = 750) => {
   if (minSize - maxSize === 0 || !maxSize) {
     return `${rem(minSize)}`
   } else if (!minSize) {

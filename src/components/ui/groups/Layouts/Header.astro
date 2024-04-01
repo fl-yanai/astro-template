@@ -1,0 +1,20 @@
+---
+interface Props {
+  width?: string
+}
+
+const { width = 'w-full' } = Astro.props
+---
+
+<header class='l-header'>
+  <div class={'l-header__wrapper ' + width}>
+    <div class='l-header__logo'>
+      <a href='/'><img src='https://placehold.jp/150x50.png' alt='ロゴ' /></a>
+    </div>
+    <div class='l-header__hamburger-toggle' id='header__hamburger-toggle'>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>

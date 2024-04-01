@@ -1,7 +1,10 @@
 ---
-import Layout from '@/components/layouts/Layout.astro'
+import LayoutDefault from '@/components/layouts/LayoutDefault.astro'
+import { PAGE } from '@/utils/constant'
 ---
 
-<Layout title='test'>
-  <p>a</p>
-</Layout>
+<LayoutDefault html={{ title: PAGE.top.title }}>
+  <div class='min-h-screen'>
+    <p>{PAGE.top.title}</p>
+  </div>
+</LayoutDefault>
