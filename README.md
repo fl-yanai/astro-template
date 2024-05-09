@@ -11,6 +11,12 @@ yarn dev
 yarn build
 ```
 
+### envファイルのコピー
+
+```bash
+cp .env.sample .env
+```
+
 ### tailwindcss カスタム
 
 ```bash

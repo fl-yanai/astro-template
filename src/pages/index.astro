@@ -3,7 +3,7 @@ import LayoutDefault from '@/components/layouts/LayoutDefault.astro'
 import { PAGE } from '@/utils/constant'
 ---
 
-<LayoutDefault html={{ title: PAGE.top.title }}>
+<LayoutDefault title={PAGE.top.title} description={''}>
   <div class='min-h-screen'>
     <p>{PAGE.top.title}</p>
   </div>

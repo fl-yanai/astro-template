@@ -1,19 +1,33 @@
 ---
-import type { typeHtml } from './type'
-import Html from '@/components/layouts/Html.astro'
 import Header from '@/components/ui/groups/Layouts/Header.astro'
 
 interface Props {
-  html: typeHtml
+  title: string
+  description: string
+  bodyStyle?: string
+  lang?: 'ja' | 'en'
 }
-const { html } = Astro.props
+const { title, description, bodyStyle, lang = 'ja' } = Astro.props
 ---
 
-<Html {...html}>
-  <link rel='stylesheet' href='/css/layouts/header.css' slot='meta' />
-  <script src='/js/layouts/header.js' slot='script'></script>
-  <Header width='c-wrapper-l' />
-  <main class='c-wrapper-l'>
-    <slot />
-  </main>
-</Html>
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='stylesheet' href='/css/common/style.css' />
+    <link rel='stylesheet' href='/css/layouts/header.css' />
+    <slot name='meta' />
+    <meta name='description' content={description} />
+    <title>{title}</title>
+  </head>
+  <body class={bodyStyle}>
+    <Header width='c-wrapper-l' />
+    <main class='c-wrapper-l'>
+      <slot />
+    </main>
+    <slot name='script' />
+    <script src='/js/layouts/header.js'></script>
+  </body>
+</html>
