@@ -13,5 +13,5 @@ export default defineConfig({
     tailwind(),
     // react()
   ],
-  base: process.env.BASE_PATH
+  base: ""
 });

@@ -10,24 +10,24 @@ interface Props {
 const { title, description, bodyStyle, lang = 'ja' } = Astro.props
 ---
 
-<!doctype html>
+<script>
+  import '@/styles/wrapper.css'
+</script>
+
 <html lang={lang}>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <meta name='generator' content={Astro.generator} />
-    <link rel='stylesheet' href='/css/common/style.css' />
-    <link rel='stylesheet' href='/css/layouts/header.css' />
     <slot name='meta' />
     <meta name='description' content={description} />
     <title>{title}</title>
   </head>
   <body class={bodyStyle}>
-    <Header width='c-wrapper-l' />
-    <main class='c-wrapper-l'>
+    <Header width='wrapper-l' />
+    <main class='wrapper-l'>
       <slot />
     </main>
     <slot name='script' />
-    <script src='/js/layouts/header.js'></script>
   </body>
 </html>
