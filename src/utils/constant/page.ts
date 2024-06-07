@@ -2,7 +2,7 @@ const _base = ''
 
 export const PAGE = {
   top: {
-    url: _base,
+    url: `${_base}`,
     title: 'TOP',
     description: '',
   },

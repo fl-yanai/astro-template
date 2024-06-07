@@ -1,11 +1,3 @@
----
-interface Props {
-  width?: string
-}
-
-const { width = 'w-full' } = Astro.props
----
-
 <script>
   const toggleButton = document.getElementById('header__hamburger-toggle')
   toggleButton?.addEventListener('click', () => {
@@ -18,7 +10,7 @@ const { width = 'w-full' } = Astro.props
 </script>
 
 <header class='header'>
-  <div class={'header__wrapper ' + width}>
+  <div class='header__wrapper'>
     <div class='header__logo'>
       <a href='/'><img src='https://placehold.jp/150x50.png' alt='ロゴ' /></a>
     </div>

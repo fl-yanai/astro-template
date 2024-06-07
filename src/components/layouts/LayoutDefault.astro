@@ -11,7 +11,7 @@ const { title, description, bodyStyle, lang = 'ja' } = Astro.props
 ---
 
 <script>
-  import '@/styles/wrapper.css'
+  import '@/styles/common.css'
 </script>
 
 <html lang={lang}>
@@ -24,8 +24,8 @@ const { title, description, bodyStyle, lang = 'ja' } = Astro.props
     <title>{title}</title>
   </head>
   <body class={bodyStyle}>
-    <Header width='wrapper-l' />
-    <main class='wrapper-l'>
+    <Header />
+    <main>
       <slot />
     </main>
     <slot name='script' />
