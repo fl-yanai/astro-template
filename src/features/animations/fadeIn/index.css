@@ -1,18 +1,18 @@
-.--target {
+.anime__fade-target {
   opacity: 0;
   transition:
     all 0.7s ease-in-out 0.1s,
     transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s;
 }
 
-.--target.--targetPassed {
+.anime__fade-target.anime__fade-targetPassed {
   opacity: 1;
 }
 
-.--target.--fadeup {
+.anime__fade-target.anime__fade-up {
   transform: translateY(50px);
 }
 
-.--target.--fadeup.--targetPassed {
+.anime__fade-target.anime__fade-up.anime__fade-targetPassed {
   transform: translateY(0);
 }

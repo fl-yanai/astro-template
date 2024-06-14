@@ -3,8 +3,15 @@ import LayoutDefault from '@/components/layouts/LayoutDefault.astro'
 import { PAGE } from '@/utils/constant'
 ---
 
+<script>
+  import { fadeInAnimation } from '@/features/animations/fadeIn/fadeInAnimation'
+  import '@/features/animations/fadeIn/index.css'
+  fadeInAnimation()
+</script>
+
 <LayoutDefault title={PAGE.top.title} description={PAGE.top.description}>
   <div class='min-h-screen'>
     <p>{PAGE.top.title}</p>
+    <div class='anime__fade-target anime__fade-up'>フェードアップする</div>
   </div>
 </LayoutDefault>
