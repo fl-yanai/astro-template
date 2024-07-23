@@ -1,13 +1,13 @@
-const _base = ''
+const base = ''
 
 export const PAGE = {
   top: {
-    url: `${_base}`,
+    url: `${base}`,
     title: 'TOP',
     description: '',
   },
   about: {
-    url: `${_base}/about`,
+    url: `${base}/about`,
     title: 'ABOUT',
     description: '',
   },

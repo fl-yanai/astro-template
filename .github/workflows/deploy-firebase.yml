@@ -1,0 +1,47 @@
+# name: Build and Upload via SFTP
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   repository_dispatch:
+#     # []の中は、microCMS の Webhook　設定で設定したトリガーイベント名
+#     types: [update-posts-pro]
+
+# jobs:
+#   build-and-upload:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Use Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '20'
+
+#       - name: Cache Yarn dependencies
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.cache/yarn
+#           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+#           restore-keys: |
+#             ${{ runner.os }}-yarn-
+
+#       - name: Install dependencies
+#         run: yarn install
+
+#       - name: Build
+#         run: yarn build
+#         env:
+#           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+#           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+
+#       - name: Deploy to Firebase
+#         # uses: w9jds/firebase-action@master
+#         uses: w9jds/firebase-action@v13.8.0
+#         with:
+#           args: deploy --only hosting
+#         env:
+#           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

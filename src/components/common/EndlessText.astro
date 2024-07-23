@@ -1,0 +1,80 @@
+---
+interface Props {
+  customStyle?: string
+}
+const { customStyle = '' } = Astro.props
+---
+
+<div class={`loop-text ${customStyle}`}>
+  <ul>
+    {
+      [...Array(8)].map((_, index) => {
+        return (
+          <li>
+            <h2>
+              <slot />
+            </h2>
+          </li>
+        )
+      })
+    }
+  </ul>
+  <ul>
+    {
+      [...Array(8)].map((_, index) => {
+        return (
+          <li>
+            <h2>
+              <slot />
+            </h2>
+          </li>
+        )
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .loop-text {
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  .loop-text ul {
+    animation: flowing 16s linear infinite;
+    transform: translateX(100%);
+    margin: 0;
+    padding: 0;
+  }
+  .loop-text ul li {
+    display: inline-block;
+    padding-right: 16px;
+  }
+  .loop-text ul li h2 {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  @keyframes flowing {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @media (max-width: 768px) {
+    .loop-text {
+      justify-content: center;
+    }
+    .loop-text ul li {
+      padding-right: 0;
+    }
+    .loop-text ul li h2 {
+      font-size: 16px;
+    }
+  }
+</style>

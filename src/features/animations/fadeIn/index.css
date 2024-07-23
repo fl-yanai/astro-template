@@ -2,7 +2,7 @@
   opacity: 0;
   transition:
     all 0.7s ease-in-out 0.1s,
-    transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s;
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
 }
 
 .anime__fade-target.anime__fade-targetPassed {

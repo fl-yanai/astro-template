@@ -1,0 +1,52 @@
+# name: Build and Upload via SFTP
+
+# on:
+#   push:
+#     branches:
+#       - staging
+#   repository_dispatch:
+#     # []の中は、microCMS の Webhook　設定で設定したトリガーイベント名
+#     types: [update-posts]
+
+# jobs:
+#   build-and-upload:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Use Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '20'
+
+#       - name: Cache Yarn dependencies
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.cache/yarn
+#           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+#           restore-keys: |
+#             ${{ runner.os }}-yarn-
+
+#       - name: Install dependencies
+#         run: yarn install
+
+#       - name: Build
+#         run: yarn build
+#         env:
+#           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+#           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+
+#       - name: Upload via SFTP
+#         uses: appleboy/scp-action@master
+#         with:
+#           host: ${{ secrets.SFTP_STAGING_HOST }}
+#           username: ${{ secrets.SFTP_STAGING_USERNAME }}
+#           port: ${{secrets.SFTP_STAGING_PORT}}
+#           key: ${{ secrets.SFTP_STAGING_KEY }}
+#           passphrase: ${{ secrets.SFTP_STAGING_PASSPHRASE }}
+#           source: 'dist/*'
+#           target: 'www/project-name/webroot'
+#           overwrite: true
+#           strip_components: 1

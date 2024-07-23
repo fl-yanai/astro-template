@@ -1,6 +1,7 @@
 ---
+import EndlessText from '@/components/common/EndlessText.astro'
 import LayoutDefault from '@/components/layouts/LayoutDefault.astro'
-import { PAGE } from '@/utils/constant'
+import { PAGE } from '@/constants'
 ---
 
 <script>
@@ -12,6 +13,7 @@ import { PAGE } from '@/utils/constant'
 <LayoutDefault title={PAGE.top.title} description={PAGE.top.description}>
   <div class='min-h-screen'>
     <p>{PAGE.top.title}</p>
+    <EndlessText>エンドレステキスト</EndlessText>
     <div class='anime__fade-target anime__fade-up'>フェードアップする</div>
   </div>
 </LayoutDefault>
